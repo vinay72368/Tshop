@@ -1,0 +1,27 @@
+{% extends "./base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    body{
+        background-image: url("https://c1.wallpaperflare.com/preview/208/6/435/shop-t-shirt-clothes-t-shirts.jpg");
+        background-size: cover;
+
+    }
+    .div1 {
+        background-color: aliceblue;
+    }
+</style>
+
+<div class="col-lg-4 mx-auto border rounded p-4 mt-4 div1">
+    <form action="/Signup/" method="post">
+        {% csrf_token %}
+        <h1 class="display-4">Create Account</h1>
+        <hr>
+        {{form|crispy}}
+       
+        <div class="form-group" >
+            <input class="btn btn-info" type="submit" value="Create Account">
+        </div>
+    </form>
+</div>
+{% endblock %}
